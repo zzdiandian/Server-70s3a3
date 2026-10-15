@@ -1,0 +1,5 @@
+--- a/Dungeon-Selection-Protocol.cs
++++ b/Dungeon-Selection-Protocol.cs
+@@ -28 +28 @@
+-  else if(opcode==5)return Offline70RoleProtocol.Packet(0,5,Offline70RoleProtocol.BatchCryptFG(Offline70RoleProtocol.Pad(town==2?ForestBody():town==3?((area==4||area==6)?GblBody():SkyBody()):town==4?(area==3?AncientBody():Act4Body()):Body(5)),keys,5,true));
++  else if(opcode==5)return Offline70RoleProtocol.Packet(0,5,Offline70RoleProtocol.BatchCryptFG(Offline70RoleProtocol.Pad(town==2?ForestBody():town==3?(area==7?new byte[]{1,0,248,42,0}:(area==4||area==6)?GblBody():SkyBody()):town==4?(area==3?AncientBody():Act4Body()):Body(5)),keys,5,true));

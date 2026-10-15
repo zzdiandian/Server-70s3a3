@@ -1,0 +1,5 @@
+--- a/Town-Content-FG75.cs
++++ b/Town-Content-FG75.cs
+@@ -170 +170 @@
+- internal static bool DungeonGate(int town,int area){return town==1&&area==2||town==2&&area==6||town==3&&(area==3||area==4||area==5||area==6)||town==4&&(area==2||area==3);}
++ internal static bool DungeonGate(int town,int area){return town==1&&area==2||town==2&&area==6||town==3&&(area==3||area==4||area==5||area==6||area==7)||town==4&&(area==2||area==3);}

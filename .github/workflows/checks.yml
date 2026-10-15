@@ -63,3 +63,12 @@ jobs:
           python-version: '3.12'
       - run: python research/integration/build.py
       - run: python research/integration/test.py
+  compile-tower-integration:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python research/tower-integration/build.py
+      - run: python research/tower-integration/test.py

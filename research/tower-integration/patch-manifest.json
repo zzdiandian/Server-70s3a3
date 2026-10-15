@@ -1,0 +1,78 @@
+{
+  "baseMain": "fdecfedbf221748b34ebc8ac4c65f8df12494cbd",
+  "inputSources": {
+    "Batch-Player-Protocol-FG.cs": "574d87d6c44000ba06a37a2b0db064a33e1b65d2b079d9425dd526bff65cb6c4",
+    "Batch-Service-FG.cs": "07d3187de2bad6375918ec6c3b67a2fac74d7d6fc750f925ac51ce989cb24acc",
+    "Dungeon-Selection-Protocol.cs": "7c312707d55d841c70146969ec83b76d1c850395739920e6c9917209a4069bce",
+    "Economy-Protocol-FG.cs": "62a8dfef18773a2ec7c3ddaeee33144f37832ecb8af148f7356d4534100a403e",
+    "Economy-State-FG.cs": "78ce05b224c6d3f5bf13f9938f505d4d54ddd741fa9ac962391a5b8589c0c319",
+    "Progression-FG.cs": "031d222eafc4a104fb9ed85f081d7f8fdbdbc52ea657d929e458952d0d9e0261",
+    "Quest-Catalog-FG.cs": "272a4c0833836a5cde0e94a5e6a7b13897757176dc947963eed16291b69d4b59",
+    "TitleBook-Service-FG157.cs": "61505befb16944d760397b270e037d06de11081f6637411014bb95abc8b15c33",
+    "Tower-DailyTickets-FG174.cs": "0aef91095b6a594b1544f610ae4473bfa0f244aa1d2caafe7a03c439b9c47461",
+    "Town-Content-FG75.cs": "cf82716b4f35ae864cfa69adcf85f570ffa8f2dee45f6087eaca1b5d556bc51a"
+  },
+  "outputSources": {
+    "Batch-Player-Protocol-FG.cs": "9b8645d2470261afd207aac75f72ceed49ae693b8a32b64afc9fe028a46324c0",
+    "Batch-Service-FG.cs": "208d0d810c44b1d2ef9ad1cb7af572ebd47e25415f1db7d3dc62ce928fa09b95",
+    "Dungeon-Selection-Protocol.cs": "c7f2c106dc9571aa38426dbd3a19bb3ccbdec5a82fef09bcc9111a144df9da0a",
+    "Economy-Protocol-FG.cs": "baad83e25d97eed764e4041f3e575d9c60447a2d3c786cc6742f711345c624b6",
+    "Economy-State-FG.cs": "c6b55ee8a3d66135981f68f51324fdc73b33f566e5181208a7988e373ab6bbcc",
+    "Progression-FG.cs": "168f8a5a511711c18543d1f1a88ed39e0452099ee94ca209c82dd24012cc2fa7",
+    "Quest-Catalog-FG.cs": "fecaeef6698704348ceb83acb6b9eca387ad04778c49aac2eb011dc4f40ff9e2",
+    "TitleBook-Service-FG157.cs": "9419d73b5317809a4183b1fa9765b28bc548e2f2d7ab3ac3942c3e6e62ffd385",
+    "Tower-DailyTickets-FG174.cs": "2851ee4d9f30564a126764ff9b0c9ef068f19003624ad0629a008ad2638af4f5",
+    "Town-Content-FG75.cs": "8ce668a289d1e3692e56251349f8cbce185f16ff8011ae26bb18a7218dd87827"
+  },
+  "questInputs": {
+    "3500": "9feada406b006dce58d6faacb65ac3f248e9fc31f0b858f58b6db64af42241ce",
+    "3501": "fd2eb6c76baad09a31b57ee7ad847e86d15f9c05026777bd34b563d651d3c70e",
+    "3502": "86209d67932ae5972822dcd839ba611adf14b140ee5ec8b2f0b1c9bed77e50c7",
+    "3588": "e8e051a3fbd7635fd2d15f1db07d4461edf8289543c7be6218fff0b211be923a",
+    "3589": "b24dce195eadc2383672caa43dfdede558d4f913644b220c16a237f87ad4a986",
+    "3590": "e2a0e33a96c1c609ff9b0488f3cca59ba432f16cf359150e71732cae8c36ce04",
+    "3591": "5dee9d7541770a1b6c7e6634c289074d7dc1c88f8f76c8de91b158e3f74e2688",
+    "3592": "a33dd61b7d9344e5ca0ee1c295250b65d06d0bc95d2bbf06185054eb021ba611",
+    "3606": "6b2348468e01b1d03ecf347c8c07f1d9ac03473c137a18dd15534e950798d53a",
+    "3612": "b03a452fea614081f85ccf1c8c6adc4ff3be4fe52cc0bb6cf10b4f4f79db5dad",
+    "7313": "cc3704c982bd03b5a9d2fc1a1c78c9b8761c1277fd15bdfb3ed8bf922e61d2c7",
+    "7314": "73597895c14633ad379c33eb1a9448999c2e6a06232c04a61a45292d92ac3046",
+    "7325": "4db337fba0cf0cfad10a86e04a61578de2c1c50d9bb8a9fc24f83247687268b9",
+    "7326": "4414f2ea091a784b1f4bbab71dc2fd8f1aed70ab4fe3aae6f51a49ee5b5e5db5"
+  },
+  "questIds": [
+    3500,
+    3501,
+    3502,
+    3588,
+    3589,
+    3590,
+    3591,
+    3592,
+    3606,
+    3612,
+    7313,
+    7314,
+    7325,
+    7326
+  ],
+  "newItemCount": 2508,
+  "releaseAllowed": false,
+  "automaticContinuation": false,
+  "towerSourceSha256": {
+    "Death-Tower-Floors-FG171.cs": "68b036e85fef16ee605729d77cccdaab5223374deb7b6cf1e005f8eda161ea76",
+    "Tower-Drop-Planner-FG175.cs": "4bc0e21301f61c2e82193719286cbb311f6445485ca1499b0daf1d8cce9d395a",
+    "Tower-Experience-FG173.cs": "b084d3959b8891e608742e256fe79a0fcf39a3cc01b2b9c2ae86924f76696908",
+    "Tower-Ground-Service-FG175.cs": "61be3210c9867fe036303306b00473309343e6465bd9812c7e0f4d6c236847d2",
+    "Tower-Rewards-FG174.cs": "4e0c139220bda8636d0b92b13e2c3e8a1be801bfaddc6694435f1f00da77cc92",
+    "Tower-Service-FG172.cs": "4d278a2e71d6095e033043d577361a0a8dfe957dfc3c7065eae69f92ff76180d",
+    "Typed-Enemy-Drops-FG171.cs": "27f86d8714de37386953b59df2c2013c37f6e5cd01532beef58db9e1f81375ac"
+  },
+  "rewardTableSha256": "f2ce87137dc6971357fb2af63bd15eb61e61e3ae003d208a9adfb7725e454ca0",
+  "towerFollowupPatches": {
+    "Tower-Service-FG172.cs": {
+      "input": "4d278a2e71d6095e033043d577361a0a8dfe957dfc3c7065eae69f92ff76180d",
+      "output": "e037d6f4c2d14bd2398fe9570f7f020d8a622fe481a31be270fbf63d3164696b"
+    }
+  }
+}

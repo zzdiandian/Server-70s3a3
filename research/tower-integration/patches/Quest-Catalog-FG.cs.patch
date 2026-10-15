@@ -1,0 +1,4 @@
+--- a/Quest-Catalog-FG.cs
++++ b/Quest-Catalog-FG.cs
+@@ -7,0 +8 @@
++ public int[] EnemyDropsFG171=new int[0];

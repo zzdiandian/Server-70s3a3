@@ -1,0 +1,310 @@
+<TowerQuestOverridesFG184>
+  <Offline70QuestDefinitionFG>
+      <Id>3500</Id>
+      <Name>追捕逃亡者 (1/3)</Name>
+      <Path>n_quest/Towers/normal_1_TowerOfDeath_catch_1.qst</Path>
+      <Grade>[common unique]</Grade>
+      <Type>[hunt enemy]</Type>
+      <SubType>-1</SubType>
+      <Npc>9</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>3501</Relation>
+      <GoldMultiple>70</GoldMultiple>
+      <Difficulty>B</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>11000</int><int>-1</int><int>55006</int><int>1</int><int>40</int></Condition><Rewards><int>0</int><int>35000</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites /><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3501</Id>
+      <Name>追捕逃亡者 (2/3)</Name>
+      <Path>n_quest/Towers/normal_1_TowerOfDeath_catch_2.qst</Path>
+      <Grade>[common unique]</Grade>
+      <Type>[hunt enemy]</Type>
+      <SubType>-1</SubType>
+      <Npc>9</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>3502</Relation>
+      <GoldMultiple>70</GoldMultiple>
+      <Difficulty>B</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>11000</int><int>-1</int><int>55012</int><int>1</int><int>1</int><int>11000</int><int>-1</int><int>50505</int><int>1</int><int>1</int><int>11000</int><int>-1</int><int>50506</int><int>1</int><int>1</int></Condition><Rewards><int>0</int><int>22000</int><int>7114</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites><Offline70QuestIdsFG><Ids><unsignedShort>3500</unsignedShort></Ids></Offline70QuestIdsFG></Prerequisites><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3502</Id>
+      <Name>追捕逃亡者 (3/3)</Name>
+      <Path>n_quest/Towers/normal_1_TowerOfDeath_catch_3.qst</Path>
+      <Grade>[common unique]</Grade>
+      <Type>[seeking]</Type>
+      <SubType>-1</SubType>
+      <Npc>5</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>70</GoldMultiple>
+      <Difficulty>B</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>4222</int><int>1</int></Condition><Rewards><int>0</int><int>1</int><int>4229</int><int>5</int></Rewards><Selection><int>1133</int><int>4</int><int>1134</int><int>4</int><int>1135</int><int>4</int><int>1136</int><int>4</int></Selection><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites><Offline70QuestIdsFG><Ids><unsignedShort>3501</unsignedShort></Ids></Offline70QuestIdsFG></Prerequisites><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171><int>604</int><int>2</int><int>11000</int><int>-1</int><int>4222</int><int>1</int><int>100</int><int>1</int></EnemyDropsFG171><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3588</Id>
+      <Name>灾难的征兆 - 死亡之纳特亚</Name>
+      <Path>n_quest/Towers/epic_50_TowerOfDeath_1.qst</Path>
+      <Grade>[epic]</Grade>
+      <Type>[hunt enemy]</Type>
+      <SubType>0</SubType>
+      <Npc>12</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>250</GoldMultiple>
+      <Difficulty>Y</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>11000</int><int>-1</int><int>15502</int><int>2</int><int>1</int></Condition><Rewards><int>0</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites /><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3589</Id>
+      <Name>灾难的征兆 - 调查深渊怪物 (1/2)</Name>
+      <Path>n_quest/Towers/epic_50_TowerOfDeath_2.qst</Path>
+      <Grade>[epic]</Grade>
+      <Type>[meet npc]</Type>
+      <SubType>-1</SubType>
+      <Npc>12</Npc>
+      <CompleteNpc>72</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>10</GoldMultiple>
+      <Difficulty>O</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>72</int></Condition><Rewards><int>0</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites><Offline70QuestIdsFG><Ids><unsignedShort>3588</unsignedShort></Ids></Offline70QuestIdsFG></Prerequisites><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3590</Id>
+      <Name>灾难的征兆 - 调查深渊怪物 (1/2)</Name>
+      <Path>n_quest/Towers/epic_50_TowerOfDeath_3.qst</Path>
+      <Grade>[epic]</Grade>
+      <Type>[meet npc]</Type>
+      <SubType>-1</SubType>
+      <Npc>72</Npc>
+      <CompleteNpc>12</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>250</GoldMultiple>
+      <Difficulty>Y</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>12</int></Condition><Rewards><int>0</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites><Offline70QuestIdsFG><Ids><unsignedShort>3589</unsignedShort></Ids></Offline70QuestIdsFG></Prerequisites><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3591</Id>
+      <Name>灾难的征兆 - 调查深渊怪物 (2/2)</Name>
+      <Path>n_quest/Towers/epic_50_TowerOfDeath_4.qst</Path>
+      <Grade>[epic]</Grade>
+      <Type>[hunt enemy]</Type>
+      <SubType>0</SubType>
+      <Npc>12</Npc>
+      <CompleteNpc>72</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>10</GoldMultiple>
+      <Difficulty>O</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>11000</int><int>-1</int><int>10203</int><int>2</int><int>1</int></Condition><Rewards><int>0</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites><Offline70QuestIdsFG><Ids><unsignedShort>3590</unsignedShort></Ids></Offline70QuestIdsFG></Prerequisites><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3592</Id>
+      <Name>灾难的征兆 - 寻找深渊派对</Name>
+      <Path>n_quest/Towers/epic_50_TowerOfDeath_5.qst</Path>
+      <Grade>[epic]</Grade>
+      <Type>[meet npc]</Type>
+      <SubType>-1</SubType>
+      <Npc>72</Npc>
+      <CompleteNpc>12</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>10</GoldMultiple>
+      <Difficulty>O</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>12</int></Condition><Rewards><int>0</int><int>30000</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites><Offline70QuestIdsFG><Ids><unsignedShort>3591</unsignedShort></Ids></Offline70QuestIdsFG></Prerequisites><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3606</Id>
+      <Name>死亡之塔 - 死神的气息 (2/2)</Name>
+      <Path>n_quest/Title/achievement_1_TowerOfDeath_sasinchingho_23.qst</Path>
+      <Grade>[achievement]</Grade>
+      <Type>[seeking]</Type>
+      <SubType>0</SubType>
+      <Npc>12</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>300</GoldMultiple>
+      <Difficulty>Z</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>4229</int><int>250</int></Condition><Rewards><int>26634</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites><Offline70QuestIdsFG><Ids><unsignedShort>3592</unsignedShort></Ids></Offline70QuestIdsFG></Prerequisites><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>true</TitleRewardFG157><EnemyDropsFG171><int>10504</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>15</int><int>250</int><int>20500</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>15</int><int>250</int><int>10301</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>20</int><int>250</int><int>5305</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>20</int><int>250</int><int>20601</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>25</int><int>250</int><int>500</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>25</int><int>250</int><int>5303</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>25</int><int>250</int><int>5304</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>25</int><int>250</int><int>15205</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>30</int><int>250</int><int>5003</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>30</int><int>250</int><int>15502</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>30</int><int>250</int><int>10202</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>35</int><int>250</int><int>20501</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>35</int><int>250</int><int>20603</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>35</int><int>250</int><int>5309</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>35</int><int>250</int><int>20401</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>2</int><int>35</int><int>250</int><int>10203</int><int>2</int><int>11000</int><int>-1</int><int>4229</int><int>3</int><int>35</int><int>250</int></EnemyDropsFG171><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>3612</Id>
+      <Name>混沌魔石 (重复)</Name>
+      <Path>n_quest/Towers/repeat_1_TowerOfDeath_diabolic_stone.qst</Path>
+      <Grade>[normaly repeat]</Grade>
+      <Type>[seeking]</Type>
+      <SubType>-1</SubType>
+      <Npc>12</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>50</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>true</Supported>
+      <Reason>Original current CN tower task; actual integration pending</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>100</GoldMultiple>
+      <Difficulty />
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>4235</int><int>15</int></Condition><Rewards><int>3228</int><int>5</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites /><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171><int>605</int><int>2</int><int>11000</int><int>-1</int><int>4235</int><int>3</int><int>100</int><int>-1</int><int>20600</int><int>2</int><int>11000</int><int>-1</int><int>4235</int><int>1</int><int>100</int><int>-1</int><int>20500</int><int>2</int><int>11000</int><int>-1</int><int>4235</int><int>1</int><int>100</int><int>-1</int><int>10203</int><int>2</int><int>11000</int><int>-1</int><int>4235</int><int>1</int><int>100</int><int>-1</int></EnemyDropsFG171><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>7313</Id>
+      <Name>贝利特的考验 - 死亡之塔 (1/4)</Name>
+      <Path>n_quest/Towers/TowerOfDeath/training_1_TowerOfDeath_20floor_58.qst</Path>
+      <Grade>[training]</Grade>
+      <Type>[clear map]</Type>
+      <SubType>-1</SubType>
+      <Npc>57</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>58</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>false</Supported>
+      <Reason>Original training task requires NPC57/training qualification integration</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>80</GoldMultiple>
+      <Difficulty>G</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>30019</int></Condition><Rewards><int>3300</int><int>4</int><int>4420</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites /><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>7314</Id>
+      <Name>贝利特的考验 - 死亡之塔 (2/4)</Name>
+      <Path>n_quest/Towers/TowerOfDeath/training_1_TowerOfDeath_30floor_58.qst</Path>
+      <Grade>[training]</Grade>
+      <Type>[clear map]</Type>
+      <SubType>-1</SubType>
+      <Npc>57</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>58</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>false</Supported>
+      <Reason>Original training task requires NPC57/training qualification integration</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>80</GoldMultiple>
+      <Difficulty>G</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>30029</int></Condition><Rewards><int>3300</int><int>7</int><int>4420</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites /><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>7325</Id>
+      <Name>贝利特的考验 - 死亡之塔 (3/4)</Name>
+      <Path>n_quest/Towers/TowerOfDeath/training_1_TowerOfDeath_40floor_59.qst</Path>
+      <Grade>[training]</Grade>
+      <Type>[clear map]</Type>
+      <SubType>-1</SubType>
+      <Npc>57</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>59</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>false</Supported>
+      <Reason>Original training task requires NPC57/training qualification integration</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>200</GoldMultiple>
+      <Difficulty>D</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>30039</int></Condition><Rewards><int>3300</int><int>12</int><int>4420</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites /><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+  <Offline70QuestDefinitionFG>
+      <Id>7326</Id>
+      <Name>贝利特的考验 - 死亡之塔 (4/4)</Name>
+      <Path>n_quest/Towers/TowerOfDeath/training_1_TowerOfDeath_clear_59.qst</Path>
+      <Grade>[training]</Grade>
+      <Type>[condition under clear]</Type>
+      <SubType>6</SubType>
+      <Npc>57</Npc>
+      <CompleteNpc>-1</CompleteNpc>
+      <MinLevel>59</MinLevel>
+      <MaxLevel>99</MaxLevel>
+      <Job>[all]</Job>
+      <GrowType>-1</GrowType>
+      <Supported>false</Supported>
+      <Reason>Original training task requires NPC57/training qualification integration</Reason>
+      <Repeatable>false</Repeatable>
+      <Relation>0</Relation>
+      <GoldMultiple>200</GoldMultiple>
+      <Difficulty>D</Difficulty>
+      <IgnoreRewardLevel>false</IgnoreRewardLevel>
+      <Condition><int>11000</int><int>-1</int></Condition><Rewards><int>3300</int><int>18</int><int>4420</int><int>1</int></Rewards><Selection /><Collisions /><MonsterDrops /><ClearDrops /><Prerequisites /><CanAbandon>true</CanAbandon>
+    <EnforceCurrentLevel>true</EnforceCurrentLevel><AlternateRewardAny>false</AlternateRewardAny><JobChange>false</JobChange><RewardGrowType>0</RewardGrowType><TitleRewardFG157>false</TitleRewardFG157><EnemyDropsFG171 /><StartItems /><AlternateRewardQuests /><AlternateRewards /></Offline70QuestDefinitionFG>
+</TowerQuestOverridesFG184>

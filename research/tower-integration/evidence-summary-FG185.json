@@ -1,0 +1,101 @@
+{
+  "version": "FG185",
+  "scope": "Death tower final reward capacity retry on current162-source candidate",
+  "serviceSha256": "052e59306603c60dbb332414fb35e10cdd483d2033b25afa2cbb0ef83bf2ada5",
+  "sourceCount": 162,
+  "changedRuntimeSources": [
+    "Tower-Service-FG172.cs"
+  ],
+  "other161SourcesAnd13DataByteIdenticalToFG184": true,
+  "behavior": [
+    "Capacity refusal leaves fixed reward and economy bytes unchanged",
+    "Backoff5seconds; keep prior display/credit due phases; original157 shown once",
+    "Real same-bag19 merges then moves existing gear to general slots free the equipment page",
+    "Same connection claims same saved reward once; no reroll, extra ticket debit or duplicate grant"
+  ],
+  "compiledRegression": {
+    "successAndFailureCases": 2,
+    "checks": 14,
+    "maintenanceCalls": 402,
+    "oldFG184ExpectedFailure": true,
+    "currentPass": true
+  },
+  "currentTcp": {
+    "fullFloors": 45,
+    "kills": 245,
+    "checks": [
+      {
+        "case": "full-bag-retry-preserves-fixed-plan",
+        "pendingSeconds": 12,
+        "displayOnlyOnce": true,
+        "savesUnchanged": true
+      },
+      {
+        "case": "real19-free-space-same-session-auto-credit-once",
+        "gear": 2,
+        "fixedGold": 18062,
+        "actualMerges": 6,
+        "actualGearMoves": 6,
+        "materialQuantity": 7,
+        "duplicateNoGrant": true,
+        "ticketUnchanged": true
+      },
+      {
+        "case": "bounded-retry-no-display-spam-and-relogin",
+        "pendingAttempts": 2,
+        "exactlyOneSavedReceipt": true
+      }
+    ],
+    "gearAwards": 2,
+    "materialMerges": 6,
+    "gearMoves": 6,
+    "relogin": true
+  },
+  "currentNative": {
+    "wire": 18,
+    "towerCallbacks": 2,
+    "scope": "Only changed recovery exchange/final reward output, not unchanged245 kill replies; original cipher/gate/checksum and157/158 callbacks",
+    "limits": [
+      "Full original cipher/gateway/post-callback checksum on current isolated service outputs",
+      "Original tower154/155/157/158 and death38 callbacks executed offline; scene/PVF/actors/UI/protected storage/allocator endpoints modeled",
+      "No original AI construction, physical spawn, health effect or human rendering claim"
+    ]
+  },
+  "currentEconomicRegressions": {
+    "baseReinforcementCases": 195,
+    "breakCases": 225,
+    "protectionCases": 225,
+    "retryProjectionCases": 9,
+    "checks": 5737,
+    "worldFixedVectors": 9002,
+    "worldAssetCases": 87,
+    "worldChecks": 9267
+  },
+  "reused": [
+    "FG18423save compatibility: economy/serialization sources and13data byte-identical; not rerun",
+    "FG18437/31actual215kills/853wire/52tower/306death originals retained as old-source proof, not fresh FG185 TCP",
+    "No full old15service group or actualAI gameplay rerun"
+  ],
+  "preparationFailures": [
+    "First full45 random reward had no gear, so fixture did not reach equipment capacity boundary; rates unchanged",
+    "Fast replay initially inspected plan before asynchronous ACK-less174 commit finished; test now waits for real157",
+    "Polling XML during atomic replacement briefly blocked/disrupted test save; discarded trial retained, file polling removed in favor of real157 barrier",
+    "Initial fixture freed only general slots; award allocator correctly still required equipment-page capacity. Added real19 gear moves to free correct category; service unchanged",
+    "First uninitialized-service regression omitted role field; fixture corrected, no product code change"
+  ],
+  "nativeSceneResearch": {
+    "provider": "REA Ghidra not configured/Java missing; no live target",
+    "status": "bounded static call/jump table locators only",
+    "limits": [
+      "Some disassembly entry candidates misaligned; not treated as functions",
+      "Controller packed branches/originalAI/spawn not executed",
+      "No actual scene creation or health/rendering acceptance"
+    ]
+  },
+  "releaseAllowed": false,
+  "deployed": false,
+  "actualGameControlled": false,
+  "actualStoresWritten": false,
+  "automaticContinuation": false,
+  "latestPlayerRemains": "FG175/v48"
+}
