@@ -1,10 +1,18 @@
-using System;using System.IO;
+﻿using System;using System.IO;
 // Generated from the CN70 client's Script.pvf (town/*.twn, area .map [town movable area] and [NPC]).
 // Door rows are the client's own portal rectangles: x y w h targetTown targetArea.
 // DungeonPortal is the client's dungeon entrance rectangle (rows with target -1/-1).
 class Offline70TownContentFG75 {
- internal static bool TownSupported(int town){return town>=1&&town<=4;}
- internal static int SeriaArea(int town){if(!TownSupported(town))throw new InvalidDataException("Unsupported town region");return town==1?1:town==2?5:town==3?2:0;}
+ // Town 6 = 根特 (Gent, town/gent.twn): areas 0 Gent_Market / 1 Gent_Workshop /
+ // 2 Gent2Ant1 and 3 Gent2Ant2 (both `[dungeon gate]` 12 = worldmap.lst #12 Antberr.wdm)
+ // and 4 Gate_Gent, the `[gate] 474 234` Seria room.  Re-derived by
+ // local-run/pvf/r2_gen_gent_lufthafen.py (town-evidence section).
+ internal static bool TownSupported(int town){return town>=1&&town<=6||town==9||town==12;}
+ internal static int SeriaArea(int town){if(!TownSupported(town))throw new InvalidDataException("Unsupported town region");
+  // Area the role wakes up in (the shared Seria room map; the NPC trio 2/32/22 marks it in
+  // every town). Town 5 (StormPass, 万年雪山): area 1 = StormPass/Gate_Storm.map; area 0 is
+  // the town square whose board does not contain the login point (474,234).
+  return town==1?1:town==2?5:town==3?2:town==5?1:town==6?4:town==9?2:town==12?3:0;}
  internal static bool Exists(int town,int area){switch(town*16+area){
   case 16:return true;
   case 17:return true;
@@ -36,6 +44,30 @@ class Offline70TownContentFG75 {
   case 66:return true;
   case 67:return true;
   case 68:return true;
+  case 80:return true;
+  case 81:return true;
+  case 82:return true;
+  case 83:return true;
+  case 96:return true;
+  case 97:return true;
+  case 98:return true;
+  case 99:return true;
+  case 100:return true;
+  // Town 9 = 鲁夫特悬空海港 (town/lufthafen.twn), areas 0..3 = map/lufthafen/*.map; the rows were
+  // already carried by Portals/Npc/DungeonPortal, only the region set was closed. Re-derived by
+  // local-run/pvf/r2_gen_gent_lufthafen.py (town-evidence section).
+  case 144:return true;
+  case 145:return true;
+  case 146:return true;
+  case 147:return true;
+  // Town 12 = 虚祖首都素喃 (town/shonan.twn), areas 0..3 = map/shonan/*.map; area2 is the
+  // 武斗大会 `[dungeon gate]` 16 area and stays closed (PvP tournament, no maze rooms in the .dgn),
+  // the town itself is walkable. Rows already carried by Portals/Npc; re-derived by
+  // local-run/pvf/gen_town_content.py town-evidence (export/town/shonan.twn.txt).
+  case 192:return true;
+  case 193:return true;
+  case 194:return true;
+  case 195:return true;
  default:return false;}}
  internal static bool Npc(int town,int area,int npc){switch(town*16+area){
   case 16:return npc==1||npc==8;
@@ -167,5 +199,5 @@ class Offline70TownContentFG75 {
   case 194:return new int[]{992,295,37,62};
  default:return null;}}
  internal static bool Linked(int town,int area,int targetTown,int targetArea){foreach(int[] p in Portals(town,area))if(p[4]==targetTown&&p[5]==targetArea)return true;return false;}
- internal static bool DungeonGate(int town,int area){return town==1&&area==2||town==2&&area==6||town==3&&(area==3||area==4||area==5||area==6)||town==4&&(area==2||area==3);}
+ internal static bool DungeonGate(int town,int area){return town==1&&area==2||town==2&&area==6||town==2&&area==9||town==2&&(area==4||area==7)||town==3&&(area==3||area==4||area==5||area==6)||town==3&&(area==9||area==10)||town==4&&(area==2||area==3)||town==5&&(area==2||area==3)||town==6&&area==2||town==6&&area==3||town==9&&area==1;}
 }

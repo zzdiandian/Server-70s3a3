@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Offline70ItemMetadataDocumentFG>
+  <Format>1</Format>
+  <PvfSha256>61CCC511C0B3804741387344DC6862C3D6731AAD3D4334142A35E095141AAE0D</PvfSha256>
+  <Items>
+    <Offline70EconomyItemDefinition>
+      <ItemId>7804</ItemId>
+      <Kind>2</Kind>
+      <StackLimit>1000</StackLimit>
+      <MinimumLevel>1</MinimumLevel>
+      <Job>255</Job>
+    </Offline70EconomyItemDefinition>
+    <Offline70EconomyItemDefinition>
+      <ItemId>8050</ItemId>
+      <Kind>2</Kind>
+      <StackLimit>1000</StackLimit>
+      <MinimumLevel>1</MinimumLevel>
+      <Job>255</Job>
+    </Offline70EconomyItemDefinition>
+    <Offline70EconomyItemDefinition>
+      <ItemId>8378</ItemId>
+      <Kind>2</Kind>
+      <StackLimit>1000</StackLimit>
+      <MinimumLevel>1</MinimumLevel>
+      <Job>255</Job>
+    </Offline70EconomyItemDefinition>
+  </Items>
+</Offline70ItemMetadataDocumentFG>

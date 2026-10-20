@@ -24,8 +24,8 @@ partial class Offline70RoleProtocol {
   using(MemoryStream m=new MemoryStream())using(BinaryWriter w=new BinaryWriter(m)){w.Write(basic,0,at);w.Write((byte)worn.Count);foreach(Offline70EconomyEntry e in worn){w.Write((byte)e.Slot);w.Write(e.ItemId);w.Write((byte)0);w.Write((uint)0);w.Write((uint)0);}w.Write(basic,at+1,basic.Length-at-1);return Packet(0,2,new Blowfish(keys).Encode(Pad(Zlib(m.ToArray()))));}
  }
  internal static byte[] BatchAppearanceFG(Offline70Role role,byte[] keys){byte[] b=AppearanceBody(BatchBaseRoleFG(role));b[15]=role.Level;return Packet(0,2,new Blowfish(keys).Encode(Pad(Zlib(b))));}
- internal static byte[] BatchAdditionBodyFG(Offline70Role role,uint total){if(role.Level!=Offline70ProgressionFG.Level(total))throw new InvalidDataException("FG role/experience mismatch");byte[] b=AdditionBody(BatchBaseRoleFG(role),0,true);BitConverter.GetBytes(total).CopyTo(b,5);Offline70SwordmanGrowthFG.Stats(role.Level).CopyTo(b,13);return b;}
- internal static byte[] BatchAdditionFG(Offline70Role role,uint total,byte[] keys){return Packet(0,2,new Blowfish(keys).Encode(Pad(Zlib(BatchAdditionBodyFG(role,total)))));}
+ internal static byte[] BatchAdditionBodyFG(Offline70Role role,uint total,byte growByte){if(role.Level!=Offline70ProgressionFG.Level(total))throw new InvalidDataException("FG role/experience mismatch");byte[] b=AdditionBody(BatchBaseRoleFG(role),0,true);BitConverter.GetBytes(total).CopyTo(b,5);Offline70SwordmanGrowthFG.Stats(growByte,role.Level).CopyTo(b,13);return b;}
+ internal static byte[] BatchAdditionFG(Offline70Role role,uint total,byte growByte,byte[] keys){return Packet(0,2,new Blowfish(keys).Encode(Pad(Zlib(BatchAdditionBodyFG(role,total,growByte)))));}
  // Original notify48 (46D5C0): remaining, used, three auxiliary counters,
  // two flags. The HUD uses remaining/(remaining+used), not select-ACK values.
  // Auxiliary counters and flags remain zero in the existing offline profile.

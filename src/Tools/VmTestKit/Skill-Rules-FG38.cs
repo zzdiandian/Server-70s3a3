@@ -116,6 +116,32 @@ partial class Offline70SkillSlots {
  new Offline70SkillRuleFG{Id=172,Cost=0,Maximum=1,Required=1,Step=0,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{1,1,1,1,1}}, // skill/swordman/armormasterylight.skl
  new Offline70SkillRuleFG{Id=187,Cost=0,Maximum=1,Required=1,Step=0,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{0,1,0,0,0}}, // skill/swordman/armormasterycloth.skl
  new Offline70SkillRuleFG{Id=197,Cost=0,Maximum=1,Required=20,Step=0,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{0,1,1,1,1}}, // skill/swordman/conversion.skl
+ // Expert job skills, PVF measured 2026-10-17 (all four: [purchase cost] 0, [required level] 20,
+ // [type] [passive], [maximum level] 20, [growtype maximum level] 10 10 10 10 10 10, [skill class] 4):
+ // Maximum/GrowCaps follow this file's existing convention (first five grow caps, Maximum = their max,
+ // cf. 181 compoundcraft "2 4 4 2 2 2" -> Maximum=4 GrowCaps={2,4,4,2,2}). Cost=0 keeps them out of
+ // the SP learn path; they are granted only by the [expert job] reward (Reward-Types-FG183).
+ new Offline70SkillRuleFG{Id=191,Cost=0,Maximum=10,Required=20,Step=0,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{10,10,10,10,10}}, // skill/swordman/enchant.skl (enchanter)
+ new Offline70SkillRuleFG{Id=192,Cost=0,Maximum=10,Required=20,Step=0,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{10,10,10,10,10}}, // skill/swordman/dollmaking.skl (doll controller)
+ new Offline70SkillRuleFG{Id=193,Cost=0,Maximum=10,Required=20,Step=0,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{10,10,10,10,10}}, // skill/swordman/alchemy.skl (alchemist)
+ new Offline70SkillRuleFG{Id=194,Cost=0,Maximum=10,Required=20,Step=0,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{10,10,10,10,10}}, // skill/swordman/opendisjointshop.skl (disjointer)
+ // First-awakening passives, character/swordman/swordman.chr [growtype grow+1][awakening 1]
+ // [awakening skill] = (id,1); PVF measured 2026-10-17 over the running HTTP API
+ // (local-run/pvf/awakening_pvf_truth.py -> local-run/driver/awakening-pvf-truth.tsv).
+ // All four: [purchase cost] 30, [required level] 48, [required level range] 3 (= Step, the same
+ // tag 12 shortswordmastery reads 3 from), [type] [passive], no prerequisite tag, and
+ // [growtype maximum level] 0 0 0 0 0 0 -> GrowCaps {0,0,0,0,0}, so JobMaximum(grow)=0 keeps them
+ // out of the op31 SP path (Learn rejects JobMaximum==0) exactly as the script says. Maximum
+ // follows this file's convention (max of the five grow caps, cf. 191 above), i.e. 0: the script's
+ // absolute [maximum level] column (50/50/50/20 - 92 stuckuponcounter really is 20, the earlier
+ // awakening report said 50 for all four) only matters for the post-awakening ceiling carried by
+ // [second growtype maximum level] (20/20/20/10 at the owner growtype), which is the QP skill path
+ // this build does not implement. BaseLevelFG139 supplies the granted level as baseline, so
+ // Validate admits level 1 (Math.Max(baseline,Maximum)) and the ledger charges (1-1)*30 = 0 SP.
+ new Offline70SkillRuleFG{Id=91,Cost=30,Maximum=0,Required=48,Step=3,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{0,0,0,0,0}}, // skill/swordman/defensedownoncritical.skl (swordman grow 1)
+ new Offline70SkillRuleFG{Id=89,Cost=30,Maximum=0,Required=48,Step=3,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{0,0,0,0,0}}, // skill/swordman/darkaura.skl (swordman grow 2)
+ new Offline70SkillRuleFG{Id=90,Cost=30,Maximum=0,Required=48,Step=3,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{0,0,0,0,0}}, // skill/swordman/bleedingmastery.skl (swordman grow 3)
+ new Offline70SkillRuleFG{Id=92,Cost=30,Maximum=0,Required=48,Step=3,Active=false,Prerequisites=new byte[]{},GrowCaps=new byte[]{0,0,0,0,0}}, // skill/swordman/stuckuponcounter.skl (swordman grow 4)
  };
  internal static Offline70SkillRuleFG Rule(byte id){foreach(Offline70SkillRuleFG r in Rules)if(r.Id==id)return r;return null;}
  internal static byte JobMaximum(Offline70SkillRuleFG r,byte grow){if(r==null||grow>4)return 0;return r.GrowCaps[grow];}

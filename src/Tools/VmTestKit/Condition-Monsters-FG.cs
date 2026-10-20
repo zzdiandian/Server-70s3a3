@@ -16,11 +16,6 @@ internal static class ConditionMonstersFG {
   foreach(var entry in Table[dungeonId])
    if(entry[0]==mapIdx)result.Add(entry);
   return result;}
- // PVF [boss room entrance condition] `[hunt monster]` triples <monsterId> <spawnCnt> <maxKillCnt>.
- // rednf ImportDungeonScript + SetGridPath + check_boss_map: each monster id spawns in spawnCnt
- // randomly chosen candidate rooms (a cell qualifies when every candidate map of that cell
- // declares the monster), a kill of the monster id increments its counter, and the boss cell
- // admits the player only once every counter reached maxKillCnt (check_boss_map error 7 otherwise).
  internal static readonly Dictionary<ushort,ushort[][]> HuntConditions =
   new Dictionary<ushort,ushort[][]>{
   {35,new ushort[][]{new ushort[]{50073,1,1},new ushort[]{50074,1,1},new ushort[]{50075,1,1},new ushort[]{50076,1,1}}},

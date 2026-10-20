@@ -14,6 +14,7 @@ class Offline70FloorDropsFG119 {
   for(int i=0;i<rolls[1];i++){uint item=Specific(mon[0],0,(uint)specificDraw(10000));if(item!=0)rewards.Add(new Reward{Item=item,Quantity=1,Source="specific-normal"});}
   if(kind>0){uint item=Specific(mon[0],kind,(uint)specificDraw(10000));if(item!=0)rewards.Add(new Reward{Item=item,Quantity=1,Source="specific-kind"});}
   Offline70GeneralStackFG126.Append(rewards,mon[1],basis,dungeon.Difficulty,kind,rolls[0],receipt);
+  Offline70WorldDropsFG182.Append(rewards,mon[1],kind,receipt);
   if(rewards.Count>MaximumRows)throw new InvalidDataException("Floor row capacity");return rewards;
  }
 }

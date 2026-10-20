@@ -47,7 +47,7 @@ partial class Offline70BatchServiceFG {
    else if(actor!=role.Id)error=0x15;
    else if(!playerDeadFG117)error=0x12;
    else if(deathWaitFG117.ElapsedMilliseconds>=DeathReturnSecondsFG117*1000)error=0x13;
-   else{Sync();if(assets.RevivalCoins==0)error=0x11;}
+   else{Sync();if(assets.RevivalCoins==0)error=0x11;else{uint revivalTicketItemFG185;uint revivalTicketCountFG185;int revivalCoinLimitFG185;if(Offline70EntryCostFG185.TryCost(dungeon.DungeonId,out revivalTicketItemFG185,out revivalTicketCountFG185,out revivalCoinLimitFG185)&&revivalCoinLimitFG185>0&&usedRevivalCoinsFG117>=revivalCoinLimitFG185)error=0x16;}}
    if(error!=0){byte[] failure=CoinReplyFG117(false,actor,error);revivalRequestsFG117.Add(sequence,new RevivalReplyFG117{Fingerprint=fingerprint,Packet=failure});Send("revival-failed44",failure);Note("REVIVAL_REJECTED seq="+sequence+" error="+error+" coinBalance="+assets.RevivalCoins+" noCharge=True");return;}
    Offline70EconomyState before=assets;bool duplicate;
    assets=Offline70Economy.Apply(economyPath,dungeon.RunId+"-revival-"+deathNumberFG117,"revival-coin",role.Id+":"+deathNumberFG117,delegate(Offline70EconomyState s){if(s.RevivalCoins==0)throw new InvalidDataException("Revival coin balance changed");s.RevivalCoins--;},out duplicate);

@@ -196,7 +196,12 @@ partial class Offline70DungeonFlowFG {
 // outside the count is read by the client as the object section and never spawns.
   RollEventMonsters();            // must run before the room packet is composed, otherwise the spawns never reach the client
   var conds=CurrentConditionMonsters();
-w.Write((byte)(TotalCount-dead[RoomIndex].Count+(spawnGsd?1:0)+(BossApcPendingFG176?1:0)));  // both APC slots count (native m_monsterMap.size())
+  // Side-channel APCs of this room (generated ApcMonstersFG rows, see Act4-Boss-Apc-FG176.cs). They
+  // count towards the native m_monsterMap.size() byte, which is what makes the client spawn them,
+  // but never towards TotalCount: their uids must stay outside ValidateKill's monster range so no
+  // drop plan (MapRolls/MonsterPools) is ever attempted for an actor that has no .mob profile.
+  var apcs=CurrentApcMonsters();int pendingApcsFG186=0;for(int ai=0;ai<apcs.Count;ai++)if(ApcPendingFG186(ApcUidFG186(ai)))pendingApcsFG186++;
+w.Write((byte)(TotalCount-dead[RoomIndex].Count+(spawnGsd?1:0)+pendingApcsFG186));  // both APC slots count (native m_monsterMap.size())
   for(ushort i=0;i<CurrentCount;i++){ushort uid=(ushort)(100+i);if(dead[RoomIndex].Contains(uid))continue;ushort[] monster=Monster(uid);w.Write(i);w.Write((uint)i);w.Write(uid);w.Write(monster[0]);w.Write((byte)monster[1]);w.Write((byte)monster[2]);w.Write((byte)0);w.Write((byte)0);}
   // Condition monsters: extra monsters that must be killed before the boss spawns.
   for(int ci=0;ci<conds.Count;ci++){ushort uid=(ushort)(100+CurrentCount+ci);if(dead[RoomIndex].Contains(uid))continue;var c=conds[ci];w.Write((ushort)(CurrentCount+ci));w.Write((uint)(CurrentCount+ci));w.Write(uid);w.Write(c[1]);w.Write((byte)c[2]);w.Write((byte)c[3]);w.Write((byte)0);w.Write((byte)0);}
@@ -204,7 +209,7 @@ w.Write((byte)(TotalCount-dead[RoomIndex].Count+(spawnGsd?1:0)+(BossApcPendingFG
   // (that range is what marks an event monster), mobIndex is the [event monster] entry value
   // and the level is the dungeon's standard level. Group index 0 mirrors the native memset.
   var evs=EventIdsForCurrentRoomFG174();for(int xi=0;xi<evs.Count;xi++){ushort uid=(ushort)(100+CurrentCount+conds.Count+xi);if(dead[RoomIndex].Contains(uid))continue;w.Write((ushort)0);w.Write((uint)(10000+xi));w.Write(uid);w.Write(evs[xi]);w.Write((byte)Offline70ClearExperienceFG116.Basis(DungeonId));w.Write((byte)0);w.Write((byte)0);w.Write((byte)0);}
-  if(spawnGsd){w.Write((ushort)0);w.Write((uint)0);w.Write(GsdUidFG130);w.Write(GsdApcFG135);w.Write((byte)84);w.Write((byte)5);w.Write((byte)0);w.Write((byte)0);GsdSpawnedFG130=true;}if(BossApcPendingFG176){w.Write((ushort)0);w.Write((uint)0);w.Write(ApcUidFG176);w.Write(BossApcIdFG176);w.Write(BossApcLevelFG176);w.Write(BossApcRoleFG176);w.Write((byte)0);w.Write((byte)0);BossApcSpawnFG176();ApcArmFG176();}w.Write((byte)0);w.Write((byte)0);return m.ToArray();
+  if(spawnGsd){w.Write((ushort)0);w.Write((uint)0);w.Write(GsdUidFG130);w.Write(GsdApcFG135);w.Write((byte)84);w.Write((byte)5);w.Write((byte)0);w.Write((byte)0);GsdSpawnedFG130=true;}for(int ai=0;ai<apcs.Count;ai++){ushort apcUidFG186=ApcUidFG186(ai);if(!ApcPendingFG186(apcUidFG186))continue;ushort[] apcRowFG186=apcs[ai];w.Write((ushort)0);w.Write((uint)0);w.Write(apcUidFG186);w.Write(apcRowFG186[1]);w.Write((byte)apcRowFG186[2]);w.Write(ApcRoleByteFG186(apcRowFG186));w.Write((byte)0);w.Write((byte)0);ApcRegisterSpawnFG186(apcUidFG186,apcRowFG186);}w.Write((byte)0);w.Write((byte)0);return m.ToArray();
  }}
  internal static byte[] ResultBody(byte rank,uint clearMilliseconds,byte technic,byte hit){if(rank>105||clearMilliseconds>86400000)throw new InvalidDataException("Clear score bounds");byte[] b=new byte[7];b[0]=rank;BitConverter.GetBytes(clearMilliseconds).CopyTo(b,1);b[5]=technic;b[6]=hit;return b;}
  // Native35 four-member projection with one local free gold card. The displayed

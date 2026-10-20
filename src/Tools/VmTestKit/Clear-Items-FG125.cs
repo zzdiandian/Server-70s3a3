@@ -13,7 +13,10 @@ public class Offline70CardOfferFG125 {
  public bool FreeDelivered,PaidPurchased;
 }
 class Offline70ClearItemsFG125 {
- internal const string CatalogSha256="df8070ab54ea306397838300d9488ed165fd6c58baa0db5ce0abf2dcd4e9bdcd";
+ // Regenerated 2026-10-16 from the CN70 PVF with local-run/pvf/gen_card_items.py: the clear-reward
+ // generateTable recipe (etc/itemdropinfo_clearreward.etc [item drop ref table], keepRandomOption
+ // =false) reproduces every shipped 1..39 cell row-for-row, so the domain now spans levels 1..70.
+ internal const string CatalogSha256="7eac246ca195ae4a34161d9fc5c16015ed0144b28815d5f1db6d233936c461e1";
  static readonly Dictionary<string,uint[][]> Tables=new Dictionary<string,uint[][]>();
  static readonly Dictionary<uint,Offline70CardItemFG125> Properties=new Dictionary<uint,Offline70CardItemFG125>();
  static string Key(int type,int rarity,int level){return type+":"+rarity+":"+level;}
@@ -23,16 +26,16 @@ class Offline70ClearItemsFG125 {
   if(hash.ToString()!=CatalogSha256)throw new InvalidDataException("Card catalog evidence hash");
   using(BinaryReader r=new BinaryReader(new MemoryStream(b),Encoding.ASCII)){
    if(Encoding.ASCII.GetString(r.ReadBytes(8))!="FG125CF1"||Encoding.ASCII.GetString(r.ReadBytes(64)).ToUpperInvariant()!=Offline70QuestCatalogFG.CurrentPvf)throw new InvalidDataException("Card catalog PVF");
-   int count=r.ReadUInt16();if(count!=648)throw new InvalidDataException("Card catalog table count");
+   int count=r.ReadUInt16();if(count!=1680)throw new InvalidDataException("Card catalog table count");
    for(int i=0;i<count;i++){
     int type=r.ReadByte(),rarity=r.ReadByte(),level=r.ReadByte(),rows=r.ReadUInt16();string key=Key(type,rarity,level);
-    if(type<1||type>4||rarity>5||level<1||level>39||rows>2048||Tables.ContainsKey(key))throw new InvalidDataException("Card table profile");
+    if(type<1||type>4||rarity>5||level<1||level>70||rows>2048||Tables.ContainsKey(key))throw new InvalidDataException("Card table profile");
     uint[][] entries=new uint[rows][];uint previous=0;
     for(int j=0;j<rows;j++){uint weight=r.ReadUInt32(),id=r.ReadUInt32();if(weight<=previous||id<3)throw new InvalidDataException("Card CDF profile");Offline70Economy.Definition(id);entries[j]=new uint[]{weight,id};previous=weight;}
     Tables.Add(key,entries);
    }
-   int items=r.ReadUInt16();if(items!=2174)throw new InvalidDataException("Card item properties count");
-   for(int i=0;i<items;i++){uint id=r.ReadUInt32();byte type=r.ReadByte();ushort durability=r.ReadUInt16();bool sealedItem=r.ReadBoolean();Offline70EconomyItemDefinition d=Offline70Economy.Definition(id);if(type!=d.Kind||d.MinimumLevel>54||durability!=d.MaxDurability||sealedItem&&d.Kind!=4&&d.Kind!=8)throw new InvalidDataException("Card creation profile");Properties.Add(id,new Offline70CardItemFG125{ItemId=id,Seed=d.Kind==4||d.Kind==8?0:-1,Durability=durability,Sealed=sealedItem});}
+   int items=r.ReadUInt16();if(items!=4820)throw new InvalidDataException("Card item properties count");
+   for(int i=0;i<items;i++){uint id=r.ReadUInt32();byte type=r.ReadByte();ushort durability=r.ReadUInt16();bool sealedItem=r.ReadBoolean();Offline70EconomyItemDefinition d=Offline70Economy.Definition(id);if(type!=d.Kind||d.MinimumLevel>70||durability!=d.MaxDurability||sealedItem&&d.Kind!=4&&d.Kind!=8)throw new InvalidDataException("Card creation profile");Properties.Add(id,new Offline70CardItemFG125{ItemId=id,Seed=d.Kind==4||d.Kind==8?0:-1,Durability=durability,Sealed=sealedItem});}
    if(r.BaseStream.Position!=r.BaseStream.Length)throw new InvalidDataException("Card catalog trailing bytes");
   }
   foreach(uint[][] table in Tables.Values)foreach(uint[] row in table)if(!Properties.ContainsKey(row[1]))throw new InvalidDataException("Card property coverage");
@@ -45,7 +48,7 @@ class Offline70ClearItemsFG125 {
   return rate==0?ratio:Store((double)rate*ratio/10000);
  }
  internal static int Threshold(int level,byte difficulty,int passed,int total,bool paid){
-  if(level<1||level>39||difficulty>3)throw new InvalidDataException("Current solo card inputs");
+  if(level<1||level>70||difficulty>3)throw new InvalidDataException("Current solo card inputs");
   int prob=paid||level<=15?9000:8000;int bonus=difficulty==0?0:difficulty==1?300:difficulty==2?600:1000;
   // Original stGenerateRefData standard rate100. Solo cannot clear while dead;
   // its dead-at-room-clear counter is zero (revival itself is not that counter).
@@ -83,9 +86,10 @@ class Offline70ClearItemsFG125 {
  }
  internal static Offline70CardOfferFG125 Offer(string run,ushort dungeon,byte difficulty,int passed,int total){
   Guid parsed=new Guid(run);if(parsed.ToString("N")!=run)throw new InvalidDataException("Card run identifier");int level=Offline70ClearExperienceFG116.Basis(dungeon);
-  // The extracted card catalog covers levels 1..38 only; Act4 basis levels (40..55) lie outside that
-  // evidence domain, so an empty offer is produced (no invented item) and Claim skips the fee for an
-  // empty paid card. Dungeons inside the catalog keep the exact behavior.
+  // The catalog now carries the complete CN70 grid: every (type,rarity,level) cell for levels
+  // 1..70, so every dungeon basis (Snow 40..49, Act4/5 up to 64) resolves to a real card pool.
+  // The empty-offer branch stays as the guard for a basis outside that domain: no invented item,
+  // and Claim skips the fee for an empty paid card.
   if(!HasTable(level))return new Offline70CardOfferFG125{RunId=run,Dungeon=dungeon,Difficulty=difficulty,Fee=Offline70PaidCostFG120.ForDungeon(dungeon),Free=new Offline70CardItemFG125(),Paid=new Offline70CardItemFG125()};
   return new Offline70CardOfferFG125{RunId=run,Dungeon=dungeon,Difficulty=difficulty,Fee=Offline70PaidCostFG120.ForDungeon(dungeon),Free=Plan(run,level,difficulty,passed,total,false),Paid=Plan(run,level,difficulty,passed,total,true)};
  }
